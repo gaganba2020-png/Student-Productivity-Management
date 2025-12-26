@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Productivity Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Student Productivity Management</h1>
+    </header>
+
+    <!-- LOGIN -->
+    <section id="login-section" class="card">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label>Username
+          <input type="text" id="login-username" required>
+        </label>
+        <label>Password
+          <input type="password" id="login-password" required>
+        </label>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </section>
+
+    <!-- PROFILE EDIT -->
+    <section id="profile-section" class="card hidden">
+      <h2>Profile</h2>
+      <form id="profile-form">
+        <label>Full name
+          <input type="text" id="profile-name" required>
+        </label>
+        <label>Class
+          <input type="text" id="profile-class" required>
+        </label>
+        <label>Age
+          <input type="number" id="profile-age" min="1" required>
+        </label>
+        <label>Bio
+          <textarea id="profile-bio" rows="3"></textarea>
+        </label>
+        <div class="row">
+          <button type="button" id="btn-save-profile" class="btn">Save Profile</button>
+          <button type="button" id="btn-skip-profile" class="btn ghost">Skip</button>
+        </div>
+        <p id="profile-msg" class="muted"></p>
+      </form>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard-section" class="card hidden">
+      <div class="top-row">
+        <div>
+          <h2 id="welcome">Welcome</h2>
+          <p id="profile-display" class="muted"></p>
+        </div>
+        <div class="profile-actions">
+          <button id="btn-edit-profile" class="btn small">Edit Profile</button>
+          <button id="btn-logout" class="btn small ghost">Logout</button>
+        </div>
+      </div>
+
+      <hr>
+
+      <div id="add-task-card" class="card small">
+        <h3>Add Task</h3>
+        <form id="task-form">
+          <label>Task name
+            <input type="text" id="task-name" required>
+          </label>
+          <label>Reminder time
+            <input type="time" id="task-time" required>
+          </label>
+          <label>Remind for how many days
+            <input type="number" id="task-days" min="1" value="7" required>
+          </label>
+          <div class="row">
+            <button type="submit" class="btn">Add Task</button>
+          </div>
+        </form>
+      </div>
+
+      <h3>Your Tasks</h3>
+      <div id="tasks-list"></div>
+
+      <div id="reminder-log" class="muted small"></div>
+    </section>
+
+    <footer class="muted small">Local, client-only demo. Data is saved in your browser's localStorage.</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
